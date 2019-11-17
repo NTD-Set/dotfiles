@@ -12,9 +12,13 @@ Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " fancy things
+hi Normal guibg=NONE ctermbg=NONE
+let t:is_transparent = 1
+syntax enable 
+let g:dracula_colorterm = 0
+colorscheme dracula 
 
-syntax on
-colorscheme dracula
+nnoremap <C-t> : call Toggle_transparent()<CR>
 
 set hlsearch
 set number
@@ -23,6 +27,7 @@ set ruler
 set cursorline
 set cursorcolumn
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4
+map <F4> :vertical wincmd f<CR>
 vnoremap  <leader>y  "+y
 nnoremap <leader>p "+p
 
