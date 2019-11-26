@@ -10,6 +10,8 @@ Plug 'SirVer/ultisnips'
 Plug 'majutsushi/tagbar'
 Plug 'kien/ctrlp.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'ludwig/split-manpage.vim'
+Plug 'mhinz/vim-startify' "fancy start screen
 
 " Theme
 Plug 'joshdick/onedark.vim'
@@ -43,19 +45,23 @@ call plug#end()
 
 " fancy things
 syntax on
-hi Normal ctermbg=NONE guibg=NONE
-hi NonText ctermbg=NONE guibg=NONE
-highlight NonText ctermbg=none
-let t:is_transparent = 1
-set termguicolors
-"let g:dracula_colorterm = 0
 let g:gruvbox_italic=1
+"let g:dracula_colorterm = 0
+"let t:is_transparent = 1
+
+"set background=dark
+set termguicolors
 colorscheme gruvbox
+"hi Normal ctermbg=NONE guibg=NONE
+"hi NonText ctermbg=NONE guibg=NONE
+"highlight! NonText ctermbg=none
+"hi! NonText ctermbg=none
+"hi! LineNr ctermbg=none
 
 " Toggle
 nnoremap <leader>a :NERDTreeToggle<cr>
 nnoremap <leader>ct :TagbarToggle<CR>
-nnoremap <leader>r :CtrlPMixed<CR>
+nnoremap <leader>r :CtrlPBuffer<CR>
 " yank and paste to clipboard
 vnoremap  <leader>y  "+y
 nnoremap <leader>p "+p
@@ -126,10 +132,13 @@ set scrolljump=-15
 " See help fo
 set formatoptions=qrnj1
 " List candidates in wildmenu after tabbing, complete longest common part in
-" matched results. Tabbing again will trigger selection among the matches.
+ "matched results. Tabbing again will trigger selection among the matches.
 set wildmode=list:longest,full
 " set terminal color
 set t_Co=256
+" set color column
+set cc=80
+
 " better vertial movement for wrapped lines
 nnoremap j gj
 nnoremap k gk
