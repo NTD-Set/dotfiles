@@ -19,6 +19,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'AlessandroYorba/Sierra'
 Plug 'ayu-theme/ayu-vim'
 Plug 'morhetz/gruvbox'
+Plug 'dracula/vim', { 'name': 'dracula' }
 
 " Nice status bar
 Plug 'bling/vim-airline'
@@ -45,18 +46,10 @@ call plug#end()
 
 " fancy things
 syntax on
-let g:gruvbox_italic=1
-"let g:dracula_colorterm = 0
-"let t:is_transparent = 1
-
-"set background=dark
-set termguicolors
-colorscheme gruvbox
-"hi Normal ctermbg=NONE guibg=NONE
-"hi NonText ctermbg=NONE guibg=NONE
-"highlight! NonText ctermbg=none
-"hi! NonText ctermbg=none
-"hi! LineNr ctermbg=none
+set background=dark
+colorscheme dracula
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 
 " Toggle
 nnoremap <leader>a :NERDTreeToggle<cr>
@@ -77,9 +70,6 @@ nnoremap <silent> L :bn<CR>
 
 noremap ] <C-]>   " forward
 noremap [ <C-T>   " back
-
-noremap <F2> gg<S-v>G"+y
-
 
 nnoremap <Leader>x *``cgn
 nnoremap <Leader>X #``cgN
@@ -105,15 +95,15 @@ let g:NERDDefaultAlign = 'left'
 set signcolumn=yes
 
 " Display hidden characters
-set list
-set listchars=tab:▸\ ,eol:¬
+"set list
+"set listchars=tab:▸\ ,eol:¬
 
 set hlsearch
 set number
 set numberwidth=1
 set ruler
-set cursorline
-set cursorcolumn
+"set cursorline
+"set cursorcolumn
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 " read/write file when switching buffers
@@ -137,7 +127,7 @@ set wildmode=list:longest,full
 " set terminal color
 set t_Co=256
 " set color column
-set cc=80
+"set cc=80
 
 " better vertial movement for wrapped lines
 nnoremap j gj
@@ -165,7 +155,7 @@ set ttyfast
 
 " you completed me configuration
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf = 0
+let g:ycm_confirm_extra_conf = 0 "turn off anoying question
 
 " vim config for tmux navigation
 let g:tmux_navigator_no_mappings = 1
